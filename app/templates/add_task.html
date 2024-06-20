@@ -3,12 +3,9 @@
 {% block content %}
 <h1>Add a New Task</h1>
 <form method="POST">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.task.label }}<br>
-        {{ form.task(size=32) }}
-    </p>
-    <p>{{ form.submit() }}</p>
+    <label for="task">Task:</label>
+    <input type="text" id="task" name="task">
+    <input type="submit" value="Add Task">
 </form>
-<a href="{{ url_for('main.index') }}" class="button">Back to To-Do List</a>
+<a href="{{ url_for('index') }}">Back to To-Do List</a>
 {% endblock %}
