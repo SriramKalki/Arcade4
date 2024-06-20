@@ -4,8 +4,11 @@
 <h1>To-Do List</h1>
 <ul>
     {% for task in tasks %}
-    <li>{{ task }}</li>
+    <li class="post">
+        {{ task.task }}
+        <a href="{{ url_for('main.edit_task', task_id=task.id) }}" class="button edit-button">Edit</a>
+        <a href="{{ url_for('main.delete_task', task_id=task.id) }}" class="button delete-button">Delete</a>
+    </li>
     {% endfor %}
 </ul>
-<a href="{{ url_for('main.add_task') }}">Add a new task</a>
 {% endblock %}
